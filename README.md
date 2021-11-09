@@ -44,17 +44,19 @@ card 2: CODEC [USB Audio CODEC], device 0: USB Audio [USB Audio]
 
 ## Installing DarkIce
 
-There are a wide range of articles on how to configure DarkIce, install it on a raspberry pi, and a number of seperate options to build from source etc.
+There are a wide range of articles on how to configure DarkIce, install it on a raspberry pi, and a number of separate options to build from source etc.
 
 It should be noted that by default DarkIce doesn't include MP3 support.
 
 For the purposes of this, there is a prebuilt.deb binary in the repo you can install
 
-1. Download the folder from GitHub using wget or curl
+1. Download the darkice_1.3-1_armhf.deb package from GitHub using wget or curl
 2. Run `dpkg -i %filename%` to install DarkIce
 3. Download the DarkIce.sh script and copy to a suitable location
 4. Run `chmod +x %path to file%` to enable execution
 5. Run `chmod 755 %path to file%` to enable suitable permissions (this can be locked down further for better security)
+
+If you want to enable hard mode, use the super helpful guide [HERE](https://www.linuxwolfpack.com/compile-darkice.php) to manually build the installer
 
 ## Installing IceCast2
 
