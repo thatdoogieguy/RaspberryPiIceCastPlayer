@@ -67,21 +67,23 @@ If you want to enable hard mode, use the super helpful guide [HERE](https://www.
 ## Configuring the Solution
 
 1. Download the darkice.cfg file from GitHub with wget or curl.
-2. Open the config file with `sudo nano /etc/darkice.cfg` and replace the entire config file with what is provided from the GitHub sample. # Where suitable, change the variables to match your setup
-3. In the config file, replace the card number in line 14 (Device Param) i.e. `device = plughw:1,0` in our configuration should be `device = plughw:2,0` to match hardware card 2
-4. Download the icecast.xml from GitHub with wget or curl.
-5. Open the config file with `sudo nano /etc/icecast2/icecast.xml` and replace the entire contents of the file with what is provided from the GitHub sample. # Where suitable, change the variables to match your setup
+2. Open the config file with `sudo nano /home/pi/RaspberryPiIceCastPlayer/darkice.sh` and replace the entire config file with what is provided from the GitHub sample. # Where suitable, change the variables to match your setup
+3. If you are using soft links create a link with `ln -s /home/pi/RaspberryPiIceCastPlayer/darkice.cfg /etc/darkice.cfg`
+4. In the config file, replace the card number in line 14 (Device Param) i.e. `device = plughw:1,0` in our configuration should be `device = plughw:2,0` to match hardware card 2
+5. Download the icecast.xml from GitHub with wget or curl.
+6. Open the config file with `sudo nano /etc/icecast2/icecast.xml` and replace the entire contents of the file with what is provided from the GitHub sample. # Where suitable, change the variables to match your setup
+7. If you are using soft links create a link with `ln -s /home/pi/RaspberryPiIceCastPlayer/icecast.xml /etc/icecast2/icecast.xml`
 
 I would strong recommend changing items like passwords and hostnames to be more secure. Make sure you update these configuration lines in both the darkice and icecast2 config files.
 
 ## Testing The Solution
 
-1. On the Pi, run the darkice.cfg file, i.e. `/home/pi/darkice.cfg` and leave the terminal window open
+1. On the Pi, run the darkice.cfg file, i.e. `/home/pi/RaspberryPiIceCastPlayer/darkice.sh` and leave the terminal window open
 2. Navigate to http://DEVICE-IP:8000 on another device. You should see IceCast load and the stream be visible in the window. Clicking on M3U in the top right hand corner should start the stream.
 3. If you aren't hearing anything, check your card settings are correct and any other settings are aligned.
 
 ## Automating on Reboot
 
 1. Login to the Pi and run `sudo crontab -e`. If you haven't done this previously you'll need to select an editor, I recommend Nano.
-2. Add the line `@reboot sleep 15 && /home/pi/darkice.sh` replacing /home/pi/darkice.sh with the correct file location.
+2. Add the line `@reboot sleep 15 && /home/pi/RaspberryPiIceCastPlayer/darkice.sh` replacing /home/pi/darkice.sh with the correct file location.
 3. Reboot the Pi and wait approximately 40 seconds for the Pi to load and the stream to become active. This should appear as a stream in http://DEVICE-IP:8000/
