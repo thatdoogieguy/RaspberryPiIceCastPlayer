@@ -27,6 +27,7 @@
 3. Update your Pi with the latest packages
 4. Enable SSH for remote management (you'll thank me later if you need to give it a kick or it misbehaves)
 5. Use a unique hostname for ease of access in home settings (or record the MAC and do some DHCP static addressing if you have a large number of devices on your network)
+6. Run `sudo apt install libpulse-dev lame libmp3lame0 libtwolame0` to install required MP3 dependencies
 
 ## Checking Your Audio
 
